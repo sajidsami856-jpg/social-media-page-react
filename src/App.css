@@ -1,0 +1,9 @@
+.appContainer{
+  display:flex;
+}
+.contentArea{
+  width:100%;
+}
+.sideBar{
+  min-height: 57rem;
+}
