@@ -12,14 +12,16 @@ function App() {
   const [currState,setTabState]=useState("Home");
   return (
     <>
-    <div className="appContainer">
-      <Sidebar selectedTab={currState} setTabState={setTabState}></Sidebar>
-      <div className='contentArea'>
-        <Header></Header>
-        {currState==="Home" ? (<PostList></PostList>) : (<CreatePost></CreatePost>)}
-        <Footer></Footer>
+    <PostListProvider>
+      <div className="appContainer">
+        <Sidebar selectedTab={currState} setTabState={setTabState}></Sidebar>
+        <div className='contentArea'>
+          <Header></Header>
+          {currState==="Home" ? (<PostList></PostList>) : (<CreatePost></CreatePost>)}
+          <Footer></Footer>
+        </div>
       </div>
-    </div>
+    </PostListProvider>
     </>
   )
 }
